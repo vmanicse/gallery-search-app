@@ -24,11 +24,11 @@ function SearchResults() {
             );
         }
         else if(apiResponse.apiJsonData.length === 0 && !apiResponse.isLoading) {
-            return <p id="no-results">No images are found.</p>;
+            // return <p id="no-results">No images are found.</p>;
+            return <></>;
         }
         else if(apiResponse.isLoading) {
-            // return <p id="no-results">Images are loading... Please wait.</p>;
-            return <></>;
+            return <p id="no-results">Images are loading... Please wait.</p>;
         }
     }
 
