@@ -26,7 +26,7 @@ function ApiServices() {
 
     function generateImgObj(response) {
         let imageArr = [];
-        response['data']['photos']['photo'].map(obj => {
+        response['data']['photos']['photo'].foreach(obj => {
             let photoObj = {
                 url: `https://live.staticflickr.com/${obj.server}/${obj.id}_${obj.secret}.jpg`,
                 title: obj.title
