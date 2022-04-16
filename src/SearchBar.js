@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import './SearchBar.css';
 import ApiServices from "./ApiServices";
 import ApiResponseContext from "./ApiResponseContext";
@@ -6,6 +6,10 @@ import ApiResponseContext from "./ApiResponseContext";
 function SearchBar() {
     const searchRef = useRef();
     const apiResponse = useContext(ApiResponseContext);
+
+    useEffect(() => {
+        callSearchApi("landscape");
+    }, []);
 
     function search(e) {
         if(e.keyCode === 13) {
@@ -21,6 +25,7 @@ function SearchBar() {
         const res = await ApiServices().getImagesApi(keyword);
         apiResponse.getApiJsonData(res.data);
         apiResponse.setLoading(false);
+        return;
     }
     
     return(
