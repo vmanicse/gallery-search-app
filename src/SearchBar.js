@@ -22,8 +22,7 @@ function SearchBar() {
         apiResponse.getApiJsonData(res.data);
         apiResponse.setLoading(false);
     }
-    callSearchApi("landscape");
-
+    
     return(
         <>
             <div id="searchbar">
