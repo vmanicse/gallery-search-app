@@ -3,9 +3,10 @@ import axios from "axios";
 function ApiServices() {
 
     const url = "https://www.flickr.com/services/rest/?method=flickr.photos.search&";
+    const apiKey = "e61674a5f0d32b7262facc56e7cead47";
 
     const getImagesApi = async (keyword) => {
-        const param = `api_key=${process.env.REACT_APP_API_KEY}&text=${keyword}&format=json&nojsoncallback=1&per_page=20`;
+        const param = `api_key=${apiKey}&text=${keyword}&format=json&nojsoncallback=1&per_page=20`;
         try {
             const response = await axios.get(url+param);
             const imgObjArr = generateImgObj(response);
@@ -26,7 +27,7 @@ function ApiServices() {
 
     function generateImgObj(response) {
         let imageArr = [];
-        response['data']['photos']['photo'].foreach(obj => {
+        response['data']['photos']['photo'].forEach(obj => {
             let photoObj = {
                 url: `https://live.staticflickr.com/${obj.server}/${obj.id}_${obj.secret}.jpg`,
                 title: obj.title
