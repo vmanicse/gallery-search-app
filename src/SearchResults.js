@@ -27,7 +27,8 @@ function SearchResults() {
             return <p id="no-results">No images are found.</p>;
         }
         else if(apiResponse.isLoading) {
-            return <p id="no-results">Images are loading... Please wait.</p>;
+            // return <p id="no-results">Images are loading... Please wait.</p>;
+            return <></>;
         }
     }
 
