@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ApiResponseContext from "./ApiResponseContext";
 import './SearchResults.css';
 import { Link } from "react-router-dom";
+import LoadingScreen from './LoadingScreen';
 
 function SearchResults() {
 
@@ -31,7 +32,7 @@ function SearchResults() {
             return <p id="no-results">No images are found.</p>;
         }
         else if(apiResponse.isLoading) {
-            return <p id="no-results">Images are loading... Please wait.</p>;
+            return <LoadingScreen />;
         }
     }
 
