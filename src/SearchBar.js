@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef, useContext, useEffect } from "react";
 import './SearchBar.css';
 import ApiServices from "./ApiServices";
 import ApiResponseContext from "./ApiResponseContext";
@@ -7,21 +7,25 @@ function SearchBar() {
     const searchRef = useRef();
     const apiResponse = useContext(ApiResponseContext);
 
+    useEffect(() => {
+        searchApi("landscape");
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
     function search(e) {
         if(e.keyCode === 13) {
             if(searchRef.current.value !== "") {
-                callSearchApi(searchRef.current.value);
+                searchApi(searchRef.current.value);
             }
         }
     }
 
-    async function callSearchApi(keyword) {
+    const searchApi = async (keyword) => {
         searchRef.current.blur();
         apiResponse.setLoading(true);
         const res = await ApiServices().getImagesApi(keyword);
         apiResponse.getApiJsonData(res.data);
         apiResponse.setLoading(false);
-    }
+    } 
     
     return(
         <>
