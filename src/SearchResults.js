@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import ApiResponseContext from "./ApiResponseContext";
 import './SearchResults.css';
+import { Link } from "react-router-dom";
 
 function SearchResults() {
 
@@ -11,6 +12,9 @@ function SearchResults() {
             <div key={key} className="img-card">
                 <img src={imgObj.url} alt={imgObj.title}/>
                 <div>{imgObj.title}</div>
+                <Link to={`/image/${imgObj.id}`} state={{imgObj}}>
+                    <span>View</span>
+                </Link>
             </div>
         );
     });

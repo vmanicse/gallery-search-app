@@ -9,6 +9,7 @@
     justify-content: center;
     flex-wrap: wrap;
     overflow: hidden;
+    padding: 10px;
 }
 
 .img-card {
@@ -20,6 +21,9 @@
     margin: 10px;
     width: 300px;
     height: 300px;
+    padding: 5px;
+    border: 2px solid #7C99AC;
+    border-radius: 10px;
 }
 
 .img-card:hover {
@@ -30,14 +34,27 @@
 .img-card img {
     width: 100%;
     height: 75%;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.img-card a {
+    width: 100%;
+    height: 10%;
+    background: #7C99AC;
+    border: none;
+    padding: 5px;
+    color: #fff !important;
+    font-weight: bold;
+    border-radius: 0px 0px 10px 10px;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 .img-card div {
     color: #7C99AC;
     font-weight: bold;
-    height: 25%;
+    height: 15%;
     width: 100%;
     text-align: center;
     overflow: hidden;

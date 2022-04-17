@@ -30,7 +30,8 @@ function ApiServices() {
         response['data']['photos']['photo'].forEach(obj => {
             let photoObj = {
                 url: `https://live.staticflickr.com/${obj.server}/${obj.id}_${obj.secret}.jpg`,
-                title: obj.title
+                title: obj.title,
+                id: obj.id
             } 
             imageArr.push(photoObj);
         });

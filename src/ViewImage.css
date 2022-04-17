@@ -1,0 +1,33 @@
+#img-holder {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    overflow: hidden;
+    margin: 20px auto auto auto;
+    color: #7C99AC;
+    border-radius: 10px;
+}
+
+#img-holder img {
+    border: 2px solid #7C99AC;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#btn-holder {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+#btn-holder button, #btn-holder a {
+    width: 40%;
+    background: #7C99AC;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
