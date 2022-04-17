@@ -1,0 +1,11 @@
+.skeleton {
+    width: 30%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .skeleton {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

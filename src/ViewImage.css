@@ -13,6 +13,8 @@
     border: 2px solid #7C99AC;
     padding: 10px;
     border-radius: 10px;
+    max-width: 90%;
+    margin: auto;
 }
 
 #btn-holder {
