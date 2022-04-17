@@ -1,4 +1,4 @@
-# Gallery Search App (React.js)
+Gallery Search App
 
 # Getting Started with Create React App
 
